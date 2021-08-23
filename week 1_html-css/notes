@@ -1,0 +1,268 @@
+HTML notes
+
+<!DOCTYPE html> = unique tag; describes document type (latest version); tells browser the file is compatible with which version otherwise it defaults to the latest html version
+
+:: HEAD ::
+instructions in the background. User does not see this on the page (except meta text is seen in the search result pages)
+title = element for tab title (instead of file name); it's a meta tag used for SEO. Use these rules of thumb when it comes to the title tag length. Maximum length: 60 characters or 575 pixels. Minimum length: 30 characters or 285 pixels
+link = element for favicon (which is self-closing tag <link />); 
+    not a hyperlink but used to link webpage to external files
+    rel = relation (bring in different external files like stylesheet or icons); what we are bringing in
+    href = hypertext ref (link to go to, where we are bringing it from); has to be 'ico' file for desktop; save in same folder structure
+meta = meta tag from which search engine pulls text for descripton; important for SEO
+    two common types = description and tags. 
+        Tags now not used. Syntax for ref = <meta name="tags" content="coding,development,xx,xx">
+    character limit before cut away - Meta descriptions can be any length, but Google generally truncates snippets to ~155–160 characters. It's best to keep meta descriptions long enough that they're sufficiently descriptive, so recommend descriptions between 50–160 characters.
+script = bring javascript into html
+style = codes for CSS; applied for text in body
+    identifier = element; then followed by curly brackets
+        group by position = ':first-child' or ':last-child' or ':nth-child(insert position number relative to parent)' or ':nth-child(odd)' / ':nth-child(even)' 
+            ':nth-child' is relative to parent
+        id = identifies one element.
+            Use ID when it applies to one and only one element 
+            In the CSS, an ID selector is a name preceded by a hash character (“#”); hashtag indicates ID
+            !! in modern day application development, ID used for different reason; used for unit testing (in sw engineering, technique where code is tested in blocks; test every single block of code to debug and automate)
+        class = classifies elements. Elements can have many/multiple classes inside same quotes 
+            Use class when it applies to multiple elements
+            In the CSS, a class selector is a name preceded by a full stop (“.”); dot indicates class
+                space indicates seperate class, - or _ means it's same class, dot(.) indicates classname
+    property = attribute / quality; within curly brackets
+        font-family = if there are single quotes, then font file may not exist in the user's computer; use commas for fall back options, ie, to tell program to go to next font option if preferred font not available
+            semicolons(;) separate properties
+    Criteria for Priority (CSS Rule)
+        !important - which style has keyword '!important'; advice: avoid using, do not use freely; use sparingly when absolutely needed
+        Specificity - which style is more specific
+        Cascading - which style is cascading
+
+
+:: BODY ::
+What user sees on the specific page
+default text color is black
+h1 to h6 = heading element (from 1 to 6 levels)
+    h1 = indicates start of webpage
+    h2 = indicates start of major section 
+    h3 = indicates start of sub section
+p = paragraph element
+img = picture element (which is self-closing tag <img />)
+    has 'src' = source (either filepath or url) 
+        must be saved in the same folder structure
+        './' means here or in this folder = ./foldername/filename.extension'
+        '../' means in the parent folder
+    has 'alt'
+    has attributes = like width & height which are in pixels 
+a = anchor element (allows to move between pages)
+    href = hypertext ref (link to go to; can be webpage,file,PDF,etc)
+    target = _blank (opens new webpage)
+    hyperlinked text (placed between tags; can be link url itself or text in lieu of)
+        blue = default. standard link colour
+        purple = visited webpage before
+div = section
+
+###
+
+Spacing (element fixed, spacing varies)
+    Margin (external spacing)
+        .m-0 (no margin)
+        .m-1 (margin 1px)
+        .mt-1 (margin top 1px)
+        .mb-1 (margin bottom 1px)
+        .ms-1 (margin start (for the left in Eng))
+        .me-1 (margin end (for the right in Eng))
+        .my-1 (margin y-axis (vertical, from the sides top and bottom))
+        .mx-1 (margin x-axis (horizontal, from the sides left and right))
+    Padding (internal spacing)
+        .p-0 (no margin)
+        .p-1 (margin 1px)
+        .pt-1 (margin top 1px)
+        .pb-1 (margin bottom 1px)
+        .ps-1 (margin start (for the left in Eng))
+        .pe-1 (margin end (for the right in Eng))
+        .py-1 (margin y-axis (vertical, from the sides top and bottom))
+        .px-1 (margin x-axis (horizontal, from the sides left and right))   
+
+Display (by default, elements are stacked on top of each other)
+    block
+    inline
+    inline-block
+    table
+    grid
+    flex (flex-direction: column or column-reverse | row or row-reverse)    
+
+        .d-flex (display flex)
+            .justify-content-between
+            .justify-content-around
+            .flex-lg-row flex-sm-column
+            justify-content: space-between;
+            align-items: center or end(bottom);
+        align & justify class properties can be used/applicable only if the element is .d-flex
+
+Breakpoints
+the points at which we transition to a different screen size. (screens come in different sizes). from xx screen and above (insert number)
+    xxl
+    xl
+    lg
+    md
+    sm
+
+Grid System (note Bootstrap grid system divides grid into 12 sections)
+    .container
+    .row
+    .col
+
+for reference: Example with Flex 
+<html>
+    <head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div style="width: 1000px;margin: 0 auto;background: antiquewhite;">
+            <div style="width: 200px; height: 200px;font-size: 20px;text-align:center;border: solid 1px #000;">
+            1
+            </div>
+            <div style="width: 200px; height: 200px;font-size: 20px;text-align:center;border: solid 1px #000;">
+            2
+            </div>
+            <div style="width: 200px; height: 200px;font-size: 20px;text-align:center;border: solid 1px #000;">
+            3
+            </div>
+            <div style="width: 200px; height: 200px;font-size: 20px;text-align:center;border: solid 1px #000;">
+            4
+            </div>
+            <div style="width: 200px; height: 200px;font-size: 20px;text-align:center;border: solid 1px #000;">
+            5
+            </div>        
+        </div>
+    </body>
+</html>
+
+
+for reference: Example with Bootstrap Flex Classes 
+<html>
+    <head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div 
+        class="d-flex flex-lg-row flex-sm-column"
+        style="width: 1000px;margin: 0 auto;background: antiquewhite;">
+            <div style="width: 200px; height: 200px;font-size: 20px;text-align:center;border: solid 1px #000;">
+            1
+            </div>
+            <div style="width: 200px; height: 200px;font-size: 20px;text-align:center;border: solid 1px #000;">
+            2
+            </div>
+            <div style="width: 200px; height: 200px;font-size: 20px;text-align:center;border: solid 1px #000;">
+            3
+            </div>
+            <div style="width: 200px; height: 200px;font-size: 20px;text-align:center;border: solid 1px #000;">
+            4
+            </div>
+            <div style="width: 200px; height: 200px;font-size: 20px;text-align:center;border: solid 1px #000;">
+            5
+            </div>        
+        </div>
+    </body>
+</html>
+
+for reference: Example with Bootstrap Grid System
+<html>
+    <head>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <style>
+            .box {
+                width: 100%; 
+                height: 200px;
+                font-size: 20px;
+                text-align:center;
+                border: solid 1px #000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="mb-3 col col-lg-3 col-sm-6">
+                    <div class="box"></div>
+                </div>
+                <div class="mb-3 col col-lg-3 col-sm-6">
+                    <div class="box"></div>
+                </div>
+                <div class="mb-3 col col-lg-3 col-sm-6">
+                    <div class="box"></div>
+                </div>
+                <div class="mb-3 col col-lg-3 col-sm-6">
+                    <div class="box"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col col-lg-7 col-sm-6">
+                    <div class="box"></div>
+                </div>
+                <div class="mb-3 col col-lg-2 col-sm-6">
+                    <div class="box"></div>
+                </div>
+                <div class="mb-3 col col-lg-2 col-sm-6">
+                    <div class="box"></div>
+                </div>
+                <div class="mb-3 col col-lg-1 col-sm-6">
+                    <div class="box"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-12 col-sm-6">
+                    <div class="box"></div>
+                </div>
+                <div class="mb-3 col-12 col-sm-6">
+                    <div class="box"></div>
+                </div>
+                <div class="mb-3 col-12 col-sm-6">
+                    <div class="box"></div>
+                </div>
+                <div class="mb-3 col-12 col-sm-6">
+                    <div class="box"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+###
+
+tip alt Z = text wrap (code) in VSCode
+tip cmd D = selects multiple instances of a string
+tip when using {}, ensure ';' used after lines of code; good for optimisation to avoid a run in or code break (when condensing multiple lines into one line)
+tip in HTML, non-code is in green text and uses '<!-- xxx -->'
+
+note Text between open and close tags are visible on the webpage (eg: <p>This is some text.</p> or <a href="https://www.google.com/" target="_blank">Go to Google</a>)
+note if you want same style properties to apply to full text in body, use 'body {}'
+note for image wrap, use img {display: block;}; the element is displayed as a block - The display property specifies if/how an element is displayed and A block-level element always starts on a new line.
+note elements inherent properties from their parents. Even if CSS is removed completely, browser has some CSS elements hardcoded in it (defualt CSS).
+note In class syntax, dot(.) indicates classname, space indicates seperate class, - or _ means it's same class
+note Semicolons(;) separate properties
+note how to switch text direction - module2:part2 @ ~50mins 
+    <style> .classname {direction: rtl; text-align: right;} </style>
+note Bootstrap grid system divides grid into 12 sections
+
+def Meta tags are invisible tags that provide data about your page to search engines and website visitors. In short, they make it easier for search engines to determine what your content is about, and thus are vital for SEO.
+def attributes = allows to control the behaviour of html element
+def event handlers = for interactivity / engagament with html element
+def parent = element that contains sub elements
+def '>' = direct child element; direct descendent 
+def DOM = document object model
+def GUI = graphical user interface
+
+resource for free stock pictures = unsplash.com
+resource for favicon generator = https://favicon.io/favicon-converter/

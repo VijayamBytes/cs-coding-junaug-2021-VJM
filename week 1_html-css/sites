@@ -1,0 +1,64 @@
+Record management; version control system (VCS): GitHub
+Deployment and continuous integration: Netlify
+CSS for HTML: Bootstrap
+For design: figma, zeplin, behance
+
+
+::: Getting started with Git and Netlify :::
+
+
+(1) If you don't have a GitHub, create a GitHub account https://github.com/signup
+
+(2) Install GIT
+    For Mac users,
+    Make sure you have homebrew installed by running this code in Terminal, 
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    then run, brew install git
+
+    For Windows users,
+    Install git here, https://git-scm.com/download/win 
+
+    For Linux distribution users, https://git-scm.com/download/linux
+
+    For both Mac and Windows, make sure git is installed by entering, git ,in the terminal (Mac OS) or Command Prompt (or GitBash for Windows)
+
+(3) Open the Terminal (or Command Prompt on Windows)
+
+(4) CD (change directory) to your folder in the terminal `cd folderpath/foldername'
+
+(5) Enter this command to initialize git, git init (NOTE: DO THIS ONLY ONCE FOR THE FOLDER)
+
+(6) Enter this command, git add .
+
+(7) Enter this command, git commit -m "First Commit"
+
+(8) Create a new repository on GitHub
+    Follow the instructions to, …or push an existing repository from the command line
+    copy first line
+
+(10) Enter this command, git push origin master
+
+-- Steps to Deploy on Netlify --
+
+(1) Create an account on Netlify (https://www.netlify.com/).
+
+(2) On the dashboard, click the button 'New Site from Git'.
+
+(3) Choose 'GitHub' as your Git Provider.
+
+(4) If prompted to grant permission to Netlify, please confirm.
+
+(5) Choose 'Only select repositories' and select your repository from the list.
+    If you are unable to see your repo, click the link that says 'Configure the Netlify app on GitHub'.
+    In the configuration window, scroll to the section 'Repository Access'.
+
+(6) In Netlify, click the name of your repository and the deployment will begin.
+
+Notes about Git 
+(1) If you've initialized in the wrong folder, toggle 'view hidden folders', and delete the .git folder. Repeat all the steps for Git.
+(2) Always cd into the correct folder before running any shell command
+(3) Use git init only once
+(4) Use git add remote... only once
+(5) If you've directly modified the repo on github.com, use git pull to sync the changes.
+
+
