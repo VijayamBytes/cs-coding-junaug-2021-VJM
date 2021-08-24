@@ -29,6 +29,9 @@ For design: figma, zeplin, behance
 (5) Enter this command to initialize git, git init (NOTE: DO THIS ONLY ONCE FOR THE FOLDER)
 
 (6) Enter this command, git add .
+    In case of email/username error, run
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
 
 (7) Enter this command, git commit -m "First Commit"
 
