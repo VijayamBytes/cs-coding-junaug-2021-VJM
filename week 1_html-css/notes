@@ -263,6 +263,7 @@ def parent = element that contains sub elements
 def '>' = direct child element; direct descendent 
 def DOM = document object model
 def GUI = graphical user interface
+def in VSCode, the 'U' means the files are 'untracked', and the 'M' means the files have been 'modified'.
 
 resource for free stock pictures = unsplash.com
 resource for favicon generator = https://favicon.io/favicon-converter/

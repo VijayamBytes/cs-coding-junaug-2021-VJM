@@ -36,9 +36,15 @@ For design: figma, zeplin, behance
 
 (8) Create a new repository on GitHub
     Follow the instructions to, …or push an existing repository from the command line
-    copy first line
+        copy first line
 
 (10) Enter this command, git push origin master
+
+you do need to create an access token for GitHub
+https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+Personal access tokens (PAT)
+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
 
 -- Steps to Deploy on Netlify --
 
@@ -52,7 +58,7 @@ For design: figma, zeplin, behance
 
 (5) Choose 'Only select repositories' and select your repository from the list.
     If you are unable to see your repo, click the link that says 'Configure the Netlify app on GitHub'.
-    In the configuration window, scroll to the section 'Repository Access'.
+        In the configuration window, scroll to the section 'Repository Access'.
 
 (6) In Netlify, click the name of your repository and the deployment will begin.
 
